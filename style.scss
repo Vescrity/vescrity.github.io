@@ -256,11 +256,11 @@ nav {
 
 .post {
   blockquote {
-    margin: 1.8em .8em;
-    border-left: 2px solid $gray;
+    margin: 1.2em .8em;
+    border-left: 2px solid $lightGray;
     padding: 0.1em 1em;
-    color: $gray;
-    font-size: 22px;
+    color: $lightGray;
+    font-size: 18px;
     font-style: italic;
   }
 
@@ -278,7 +278,7 @@ nav {
   margin-top: 50px;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  background-color: $lightGray;
+  background-color: $back;
 }
 
 footer {
@@ -289,5 +289,5 @@ footer {
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
-//@import "svg-icons";
+@import "svg-icons";
 //@import "{{ site.theme }}";
