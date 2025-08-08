@@ -4,12 +4,15 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+### My Desktop
 
-### More Information
+- [Arch Linux](https://archlinux.org/)
+- [niri](https://github.com/YaLTeR/niri)
+- [虎码](https://tiger-code.com/)
 
-A place to include any other types of information that you'd like to include about yourself.
+### Platforms
 
-### Contact me
+- [GitHub](https://github.com/Vescrity)
+- [AcFun](www.acfun.cn/u/32470764)
+- [CloudMusic](https://music.163.com/#/artist?id=32973240)
 
-[email@domain.com](mailto:email@domain.com)
