@@ -245,8 +245,11 @@ nav {
 //
 
 .posts > .post {
+  background: #333;
+  margin: 5px;
+  border-radius:18px;
   padding-bottom: 2em;
-  border-bottom: 1px solid $lightGray;
+  //border-bottom: 1px solid $lightGray;
 }
 
 .posts > .post:last-child {
