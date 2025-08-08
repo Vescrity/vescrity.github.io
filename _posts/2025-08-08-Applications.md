@@ -1,6 +1,9 @@
-# GNU/Linux 应用推荐
+---
+layout: post
+title: GNU/Linux 应用推荐
+---
 
-主要是一些个人常用的应用。
+主要是一些自己常用的应用。
 
 ## 实用工具
 

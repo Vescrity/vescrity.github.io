@@ -1,4 +1,6 @@
-# 电源管理
+---
+title: 电源管理
+---
 
 记录一些常用的电源配置。
 
@@ -24,11 +26,11 @@
 
 ##### mpv 等应用默认使用独显
 解决：
-```
+```bash
 export VK_LOADER_DRIVERS_SELECT=intel_hasvk_icd.x86_64.json,intel_icd.x86_64.json
 ```
 或
-```
+```bash
 VK_LOADER_DRIVERS_DISABLE="nvidia_icd.json"
 ```
 

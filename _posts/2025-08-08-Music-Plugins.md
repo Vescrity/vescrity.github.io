@@ -1,4 +1,9 @@
-# 插件推荐
+---
+layout: post
+title: DSP插件推荐
+---
+
+LV2/VST/...
 
 ## 一些合集
 
