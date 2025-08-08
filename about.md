@@ -13,6 +13,6 @@ permalink: /about/
 ### Platforms
 
 - [GitHub](https://github.com/Vescrity)
-- [AcFun](www.acfun.cn/u/32470764)
+- [AcFun](https://www.acfun.cn/u/32470764)
 - [CloudMusic](https://music.163.com/#/artist?id=32973240)
 
