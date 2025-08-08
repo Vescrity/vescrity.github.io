@@ -6,7 +6,7 @@
 //
 
 
-//@import "reset";
+@import "reset";
 @import "variables";
 // Syntax highlighting @import is at the bottom of this file
 
@@ -17,11 +17,12 @@
 html {
   font-size: 100%;
 }
-
+$front: #fff;
+$back: #000;
 body {
-	background: $white;
+	background: $black;
   font: 18px/1.4 $helvetica;
-  color: $darkGray;
+  color: $front;
 }
 
 .container {
@@ -33,7 +34,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $helveticaNeue;
-  color: $darkerGray;
+  color: $front;
   font-weight: bold;
 
   line-height: 1.7;
@@ -193,7 +194,7 @@ img {
 
 .site-name {
   margin: 0;
-  color: $darkGray;
+  color: $front;
   cursor: pointer;
   font-family: $helveticaNeue;
   font-weight: 300;
@@ -216,6 +217,7 @@ nav {
   margin-top: 23px; // @TODO: Vertically middle align
   font-family: $helveticaNeue;
   font-size: 18px;
+  color: #fff;
 
   @include mobile {
     float: none;
@@ -226,14 +228,14 @@ nav {
 
   a {
     margin-left: 20px;
-    color: $darkGray;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
+    color: #fff;
 
     @include mobile {
       margin: 0 10px;
-      color: $blue;
+      color: #fff;
     }
   }
 }
@@ -288,4 +290,4 @@ footer {
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
 //@import "svg-icons";
-@import "{{ site.theme }}";
+//@import "{{ site.theme }}";
