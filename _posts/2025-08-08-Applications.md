@@ -149,8 +149,6 @@
 
 ### pro-audio
 
-详见 [这里](../MusicProduction)
-
 #### DAW
 
 - Ardour
