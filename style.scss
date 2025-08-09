@@ -372,7 +372,21 @@ footer {
 .back-to-top:hover {
   background-color: #555;
 }
+/* 当屏幕宽度 ≤ 1024px 时，右栏移至左栏下方 */
+@media (max-width: 1024px) {
+  .main-container {
+    flex-wrap: wrap; 
+  }
 
+  .right-sidebar {
+    width: 100%;
+    order: 3; 
+  }
+
+  .main-content {
+    min-width: 600px !important;;  /* 确保主内容最小宽度 */
+  }
+}
 /* 响应式设计 */
 @media (max-width: 768px) {
   .main-container {
