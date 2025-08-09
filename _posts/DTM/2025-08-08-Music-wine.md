@@ -1,5 +1,6 @@
 ---
 title: DAW 与 Wine 相关
+categories: [Application, DTM, WINE]
 ---
 
 音乐制作中和 Wine 相关的一点东西。

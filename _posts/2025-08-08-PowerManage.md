@@ -1,5 +1,6 @@
 ---
 title: 电源管理
+categories: [TLP, GPU]
 ---
 
 记录一些常用的电源配置。

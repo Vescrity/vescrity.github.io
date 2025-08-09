@@ -1,6 +1,7 @@
 ---
 layout: post
 title: DSP插件推荐
+categories: [Application, DTM]
 ---
 
 LV2/VST/...

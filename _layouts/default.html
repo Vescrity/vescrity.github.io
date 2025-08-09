@@ -2,17 +2,14 @@
 <html>
   <head>
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
-
     {% include meta.html %}
-
+    
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-
-    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
 
   <body>
@@ -20,22 +17,35 @@
       <div class="container">
         <header class="masthead clearfix">
           <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
-
           <div class="site-info">
             <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
             <p class="site-description">{{ site.description }}</p>
           </div>
-
           <nav>
             <a href="{{ site.baseurl }}/">Blog</a>
             <a href="{{ site.baseurl }}/about">About</a>
+            <a href="{{ site.baseurl }}/friends">Friends</a>
           </nav>
         </header>
       </div>
     </div>
 
-    <div id="main" role="main" class="container">
-      {{ content }}
+    <!-- 添加的侧边栏容器 -->
+    <div class="main-container">
+      <!-- 左侧边栏 -->
+      <aside class="sidebar left-sidebar">
+        {% include left-sidebar.html %}
+      </aside>
+
+      <!-- 主内容区 -->
+      <main id="main" role="main" class="container main-content">
+        {{ content }}
+      </main>
+
+      <!-- 右侧边栏 -->
+      <aside class="sidebar right-sidebar">
+        {% include right-sidebar.html %}
+      </aside>
     </div>
 
     <div class="wrapper-footer">
@@ -47,5 +57,26 @@
     </div>
 
     {% include analytics.html %}
+    <button id="back-to-top" class="back-to-top" aria-label="返回顶部">↑</button>
+    <script>
+        // 获取按钮元素
+        const backToTopButton = document.getElementById("back-to-top");
+
+        /* 监听滚动事件
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add("visible");
+            } else {
+                backToTopButton.classList.remove("visible");
+            }
+        });*/
+
+        backToTopButton.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
   </body>
 </html>

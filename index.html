@@ -11,8 +11,11 @@ layout: default
       <div class="entry">
         {{ post.excerpt }}
       </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+      <div class="post-footer">
+        {% if post.categories.size > 0 %}
+          <span class="post-categories">分类: {{ post.categories | join: ", " }}</span>
+        {% endif %}
+      </div>
     </article>
   {% endfor %}
 </div>

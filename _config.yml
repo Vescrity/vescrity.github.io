@@ -7,7 +7,7 @@ name: Yukitoha 站站站
 title: Yukitoha 站站站
 
 # Short bio or description (displayed in the header)
-description: v3:0.1 ... 能跑就行了吧？
+description: v0.13 ... 能跑就行了吧？
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://gravatar.com/avatar/e11a9ca7d685d7201509d1eaa446c375?size=512
@@ -55,7 +55,10 @@ baseurl: ""
 #
 
 permalink: /post/:title/
-
+#collections:
+#  categories:
+#    output: true
+#    permalink: /cate/:name/
 # The release of Jekyll Now that you're using
 #version: v1.2.0
 
@@ -77,14 +80,23 @@ sass:
 #gems:
 #  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
 #  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+#  - jekyll-search
+#  - jekyll-archives
 
 #remote_theme: pages-themes/midnight@v0.2.0
 plugins:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
-  - jekyll-search
+#  - jekyll-search
+#  - jekyll-archives
   #- jekyll-remote-theme
-# Exclude these files from your production _site
+#jekyll-archives:
+#  enabled: [categories]  # 启用分类归档
+#  layouts:
+#    category: category   # 使用上面创建的模板
+#  permalinks:
+#    category: /category/:name/  # URL结构
+## Exclude these files from your production _site
 exclude:
   - Gemfile
   - Gemfile.lock

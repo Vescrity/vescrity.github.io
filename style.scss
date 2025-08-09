@@ -243,18 +243,21 @@ nav {
 //
 // .main
 //
-
 .posts > .post {
-  background: #333;
+  background: #111;
   margin: 5px;
-  border-radius:18px;
-  padding-bottom: 2em;
-  //border-bottom: 1px solid $lightGray;
+  border-radius: 18px;
+  padding: 5px;
+  border: 6px solid transparent;
+  transition: border-image 0.5s ease;
+  transition: border 0.5s ease;
 }
 
-.posts > .post:last-child {
-  padding-bottom: 1em;
-  border-bottom: none;
+.posts > .post:hover {
+  border-image: linear-gradient(45deg, gold, deeppink) 1;
+  clip-path: inset(0 round 10px);
+  transition: border-image 0.1s ease;
+  transition: border 0.1s ease;
 }
 
 .post {
@@ -276,6 +279,18 @@ nav {
     font-size: 15px;
   }
 }
+.post-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.post-categories {
+  font-size: 0.9em;
+  color: #666;
+  font-style: italic;
+}
 
 .wrapper-footer {
   margin-top: 50px;
@@ -288,7 +303,91 @@ footer {
   padding: 20px 0;
   text-align: center;
 }
+/* 侧边栏布局样式 */
+.main-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 
+.sidebar {
+  flex: 0 0 200px;
+  padding: 20px;
+}
+
+.left-sidebar {
+  order: 1;
+}
+
+.main-content {
+  flex: 1;
+  order: 2;
+  min-width: 0;
+  padding: 0 20px;
+}
+
+
+.right-sidebar {
+  order: 3;
+}
+/* 分类列表样式 */
+.category-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.category-list li {
+  margin-bottom: 0.8rem;
+  border-left: 3px solid #eee;
+  padding-left: 1rem;
+  transition: border-color 0.3s;
+}
+
+.category-list li:hover {
+  border-left-color: #ff6b6b;
+}
+
+.category-list a {
+  text-decoration: none;
+  color: #aaa;
+}
+
+
+/* 返回顶部按钮样式 */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #314;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 999;
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: #555;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    flex: 1 0 auto;
+    order: 2 !important;
+  }
+}
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
