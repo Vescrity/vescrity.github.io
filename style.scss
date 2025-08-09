@@ -244,7 +244,7 @@ nav {
 // .main
 //
 .posts > .post {
-  background: #111;
+  background: #101;
   margin: 5px;
   border-radius: 18px;
   padding: 5px;
@@ -274,10 +274,6 @@ nav {
     margin-top: 10px;
   }
 
-  .read-more {
-    text-transform: uppercase;
-    font-size: 15px;
-  }
 }
 .post-footer {
   display: flex;
