@@ -1,9 +1,8 @@
 ---
 layout: post
 title: 从启动开始的外观配置
+categories: [Appearence]
 ---
-
-# 从启动开始的外观配置
 
 > 只是一些记录
 

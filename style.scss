@@ -5,6 +5,7 @@
 // IMPORTS
 //
 
+
 @import "reset";
 @import "variables";
 // Syntax highlighting @import is at the bottom of this file
@@ -16,11 +17,12 @@
 html {
   font-size: 100%;
 }
-
+$front: #fff;
+$back: #000;
 body {
-	background: $white;
+	background: $black;
   font: 18px/1.4 $helvetica;
-  color: $darkGray;
+  color: $front;
 }
 
 .container {
@@ -32,7 +34,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $helveticaNeue;
-  color: $darkerGray;
+  color: $front;
   font-weight: bold;
 
   line-height: 1.7;
@@ -192,7 +194,7 @@ img {
 
 .site-name {
   margin: 0;
-  color: $darkGray;
+  color: $front;
   cursor: pointer;
   font-family: $helveticaNeue;
   font-weight: 300;
@@ -215,6 +217,7 @@ nav {
   margin-top: 23px; // @TODO: Vertically middle align
   font-family: $helveticaNeue;
   font-size: 18px;
+  color: #fff;
 
   @include mobile {
     float: none;
@@ -225,14 +228,14 @@ nav {
 
   a {
     margin-left: 20px;
-    color: $darkGray;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
+    color: #fff;
 
     @include mobile {
       margin: 0 10px;
-      color: $blue;
+      color: #fff;
     }
   }
 }
@@ -240,24 +243,30 @@ nav {
 //
 // .main
 //
-
 .posts > .post {
-  padding-bottom: 2em;
-  border-bottom: 1px solid $lightGray;
+  background: #101;
+  margin: 5px;
+  border-radius: 18px;
+  padding: 5px;
+  border: 6px solid transparent;
+  transition: border-image 0.5s ease;
+  transition: border 0.5s ease;
 }
 
-.posts > .post:last-child {
-  padding-bottom: 1em;
-  border-bottom: none;
+.posts > .post:hover {
+  border-image: linear-gradient(45deg, gold, deeppink) 1;
+  clip-path: inset(0 round 10px);
+  transition: border-image 0.1s ease;
+  transition: border 0.1s ease;
 }
 
 .post {
   blockquote {
-    margin: 1.8em .8em;
-    border-left: 2px solid $gray;
+    margin: 1.2em .8em;
+    border-left: 2px solid $lightGray;
     padding: 0.1em 1em;
-    color: $gray;
-    font-size: 22px;
+    color: $lightGray;
+    font-size: 18px;
     font-style: italic;
   }
 
@@ -265,25 +274,132 @@ nav {
     margin-top: 10px;
   }
 
-  .read-more {
-    text-transform: uppercase;
-    font-size: 15px;
-  }
+}
+.post-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.post-categories {
+  font-size: 0.9em;
+  color: #666;
+  font-style: italic;
 }
 
 .wrapper-footer {
   margin-top: 50px;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  background-color: $lightGray;
+  background-color: $back;
 }
 
 footer {
   padding: 20px 0;
   text-align: center;
 }
+/* 侧边栏布局样式 */
+.main-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 
+.sidebar {
+  flex: 0 0 200px;
+  padding: 20px;
+}
+
+.left-sidebar {
+  order: 1;
+}
+
+.main-content {
+  flex: 1;
+  order: 2;
+  min-width: 0;
+  padding: 0 20px;
+}
+
+
+.right-sidebar {
+  order: 3;
+}
+/* 分类列表样式 */
+.category-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.category-list li {
+  margin-bottom: 0.8rem;
+  border-left: 2px solid #eee;
+  padding-left: 0.5rem;
+  transition: border-color 0.3s;
+}
+
+.category-list li:hover {
+  border-left-color: #ff6b6b;
+}
+
+.category-list a {
+  text-decoration: none;
+  color: #aaa;
+}
+
+
+/* 返回顶部按钮样式 */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #314;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 999;
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: #555;
+}
+/* 当屏幕宽度 ≤ 1024px 时，右栏移至左栏下方 */
+@media (max-width: 1024px) {
+  .main-container {
+    flex-wrap: wrap; 
+  }
+
+  .right-sidebar {
+    width: 100%;
+    order: 3; 
+  }
+
+  .main-content {
+    min-width: 600px !important;;  /* 确保主内容最小宽度 */
+  }
+}
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    flex: 1 0 auto;
+    order: 2 !important;
+  }
+}
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
 @import "svg-icons";
+//@import "{{ site.theme }}";

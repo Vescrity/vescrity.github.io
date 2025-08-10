@@ -1,0 +1,83 @@
+<div class="sidebar-section">
+  <h3>分类导航</h3>
+  <ul class="category-list">
+    {% for category in site.categories %}
+      {% assign category_name = category[0] %}
+      <li class="category-item">
+        <div class="category-header">
+          <span class="category-name">{{ category_name }}</span>
+          <span class="category-count">({{ category[1].size }})</span>
+          <span class="toggle-icon">+</span>
+        </div>
+        <ul class="post-list" style="display: none;">
+          {% for post in category[1] %}
+            <li>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<style>
+  .category-item {
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+  .category-header {
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 0;
+    user-select: none;
+  }
+  .category-name {
+    flex-grow: 1;
+    font-weight: bold;
+  }
+  .category-count {
+    color: #666;
+    margin: 0 0.5rem;
+  }
+  .toggle-icon {
+    width: 1rem;
+    text-align: center;
+  }
+  .post-list {
+    list-style: none;
+    padding-left: 0.5rem;
+    margin: 0.3rem 0;
+  }
+  .post-list li {
+    margin: 0.3rem 0;
+  }
+  .post-list a {
+    text-decoration: none;
+  }
+  .post-list a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const categoryHeaders = document.querySelectorAll('.category-header');
+  
+  categoryHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+      const postList = this.nextElementSibling;
+      const toggleIcon = this.querySelector('.toggle-icon');
+      
+      if (postList.style.display === 'none') {
+        postList.style.display = 'block';
+        toggleIcon.textContent = '-';
+      } else {
+        postList.style.display = 'none';
+        toggleIcon.textContent = '+';
+      }
+    });
+  });
+});
+</script>
+

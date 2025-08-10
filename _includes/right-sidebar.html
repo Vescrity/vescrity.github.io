@@ -1,0 +1,16 @@
+<div class="sidebar-section">
+    <h3>站站站</h3>
+    <div class="annouce">
+        测试中...
+    </div>
+    <div class="sidebar-section">
+        <h3>文章归档</h3>
+        <ul>
+            {% for post in site.posts limit:5 %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</div>
+
