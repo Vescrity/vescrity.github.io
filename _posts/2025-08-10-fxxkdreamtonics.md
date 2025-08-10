@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 绝不要在 Dreamtonics 上再花半分钱
-Categories: [Others]
+categories: [Others]
 ---
 
 *脏话*
