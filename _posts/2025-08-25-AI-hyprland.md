@@ -1,8 +1,10 @@
 ---
 layout: post
 title: gemini 说 hyprland 长这样
-categories: [other]
+categories: [Others]
 ---
+
+我寻思这不 labwc 么（）以下从桔梦接 gemini 生成的内容复制。
 
 <div style="background-color: rgb(30, 30, 46); width: 100%; height: 80vh; position: relative; overflow: hidden; font-family: &quot;DejaVu Sans Mono&quot;, monospace; color: rgb(205, 214, 244); box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 30px inset; display: flex; justify-content: center; align-items: center; --darkreader-inline-bgcolor: var(--darkreader-background-1e1e2e, #000006); --darkreader-inline-color: var(--darkreader-text-cdd6f4, #dfffff); --darkreader-inline-boxshadow: var(--darkreader-background-00000066, rgba(0, 0, 0, 0.4)) 0px 0px 30px inset;" data-darkreader-inline-bgcolor="" data-darkreader-inline-color="" data-darkreader-inline-boxshadow="">
     <style>
