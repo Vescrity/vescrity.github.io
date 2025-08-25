@@ -100,7 +100,7 @@ categories: [Others]
     </style>
     <div class="hyprland-screen-inner">
         <!-- Terminal 1 -->
-        <div class="hyprland-window" style="top: 80px; left: 200px; width: 550px; height: 350px; z-index: 5;">
+        <div class="hyprland-window" style="top: 80px; left: 100px; width: 550px; height: 350px; z-index: 5;">
             <div class="window-header">
                 <span class="window-title">Terminal [1] - Zsh</span>
                 <div class="window-controls">
@@ -121,7 +121,7 @@ categories: [Others]
         </div>
 
         <!-- Terminal 2 -->
-        <div class="hyprland-window" style="top: 40px; left: 100px; width: 450px; height: 280px; z-index: 4;">
+        <div class="hyprland-window" style="top: 40px; left: 0px; width: 450px; height: 280px; z-index: 4;">
             <div class="window-header">
                 <span class="window-title">Browser - Arch Wiki</span>
                 <div class="window-controls">
@@ -140,7 +140,7 @@ categories: [Others]
         </div>
 
         <!-- Terminal 3 -->
-        <div class="hyprland-window" style="top: 60px; left: 550px; width: 450px; height: 280px; z-index: 4;">
+        <div class="hyprland-window" style="top: 60px; left: 350px; width: 450px; height: 280px; z-index: 4;">
             <div class="window-header">
                 <span class="window-title">Editor - script.sh</span>
                 <div class="window-controls">
@@ -160,7 +160,7 @@ categories: [Others]
         </div>
 
         <!-- Terminal 4 -->
-        <div class="hyprland-window" style="top: 380px; left: 150px; width: 450px; height: 280px; z-index: 4;">
+        <div class="hyprland-window" style="top: 380px; left: 100px; width: 450px; height: 280px; z-index: 4;">
             <div class="window-header">
                 <span class="window-title">System Monitor (btop)</span>
                 <div class="window-controls">
@@ -182,7 +182,7 @@ categories: [Others]
         </div>
 
         <!-- Terminal 5 -->
-        <div class="hyprland-window" style="top: 400px; left: 590px; width: 450px; height: 280px; z-index: 4;">
+        <div class="hyprland-window" style="top: 400px; left: 400px; width: 450px; height: 280px; z-index: 4;">
             <div class="window-header">
                 <span class="window-title">Music - cmus</span>
                 <div class="window-controls">
