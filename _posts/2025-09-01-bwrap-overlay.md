@@ -1,7 +1,7 @@
 ---
 layout: post
 title: bwrap overlay
-categories: [bwrap, Note]
+categories: [GNU/Linux, bwrap, Note]
 ---
 
 弄明白了一点点，做个记录

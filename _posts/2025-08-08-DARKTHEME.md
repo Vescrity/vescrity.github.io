@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 主题配置与踩坑
-categories: [Appearence]
+categories: [GNU/Linux, Appearence]
 ---
 
 本文用于记录在非传统桌面环境(除 KDE Gnome 之外)上配置(深色)主题。

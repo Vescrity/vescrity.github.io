@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 日常实用小应用
-categories: [Application]
+categories: [GNU/Linux, Application]
 ---
 
 总体的汇总做过了，但还打算对一些十分实用的东西做一个具体的介绍，

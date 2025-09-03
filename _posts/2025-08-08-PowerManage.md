@@ -1,6 +1,6 @@
 ---
 title: 电源管理
-categories: [TLP, GPU]
+categories: [TLP, GPU, GNU/Linux]
 ---
 
 记录一些常用的电源配置。
