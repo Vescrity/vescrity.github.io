@@ -6,10 +6,11 @@ categories: [GNU/Linux, Appearence]
 
 本文用于记录在非传统桌面环境(除 KDE Gnome 之外)上配置(深色)主题。
 
+2025-09-12更新: [可以用 matugen 等方法来生成一套相对统一的配色](/post/matugen)
+
 从[这里](https://www.pling.com/)可以找到大量的社区主题。
 
 常见的可配置主题的桌面应用主要基于 QT 和 GTK。
-
 
 ## QT
 
