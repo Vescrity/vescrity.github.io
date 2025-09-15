@@ -32,6 +32,8 @@ categories: [GNU/Linux, bluetooth, Audio]
 运行 `mpris-proxy` 即可。也可以做一个 systemd 服务。
 详见 https://wiki.archlinuxcn.org/zh-cn/MPRIS#%E8%93%9D%E7%89%99
 
+- 2025-09-14: 似乎这东西在蓝牙断开还是桌面退出之后就会抽疯，吃满 CPU，所以有时候得杀掉它
+
 ## 效果？
 
 基本没啥问题，可能音量需要调得稍大一些。

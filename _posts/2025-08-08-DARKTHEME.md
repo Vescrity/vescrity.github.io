@@ -14,7 +14,17 @@ categories: [GNU/Linux, Appearence]
 
 ## QT
 
-推荐使用 qt6ct qt5ct kvantum 来配置主题。
+##### 仅 qtct
+
+使用 qt6ct/qt5ct 加上一个简单的配色方案即可
+
+##### breeze / Klassy
+
+[这里](/post/Breeze-without-plasma)
+
+##### Kvantum 
+
+可以使用 qt6ct qt5ct 配合 Kvantum
 
 Kvantum 用于加载并配置主题，qt6ct 则用于应用主题。
 
