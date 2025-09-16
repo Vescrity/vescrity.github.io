@@ -31,7 +31,7 @@ categories: [GNU/Linux, Appearence]
 这能忍？
 
 - 新用户下直接使用 Klassy 配置深色 be like (i3, lxqt)：
-<img alt="" src="https://github.com/user-attachments/assets/31e515c2-3247-45fe-95e4-9de56f91fd65" />
+![](https://github.com/user-attachments/assets/31e515c2-3247-45fe-95e4-9de56f91fd65)
 
 于是我把 .local/share/color-scheme 里的 Sweet 配色删掉，又把 .config 里所有和 Sweet 有关的配置项都处理掉。
 可它还是两种配色同时存在。
@@ -62,5 +62,5 @@ ln -s ../.local/share/color-scheme/Matugen.colors kdeglobals
 1. 打开 pcmanfm-qt，符合预期
 
 - 示例：
-<img alt="图片" src="https://github.com/user-attachments/assets/eedeff37-d42d-48f3-9c0f-7520ce3d3387" />
+![](https://github.com/user-attachments/assets/eedeff37-d42d-48f3-9c0f-7520ce3d3387)
 
