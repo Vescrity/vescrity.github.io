@@ -8,7 +8,18 @@ categories: [GNU/Linux, Appearence]
 
 ## TLDR
 
-~/.config/kdeglobals 链接为配色文件
+~/.config/kdeglobals 链接至配色文件即可
+
+### 顺使总结下这一堆配置文件都在哪
+
+- 配色方案(color-scheme): 总体的在 `$XDG_DATA_HOME/color-scheme/`
+- 风格设为 Breeze/Klassy 等时，也会从 `$XDG_CONFIG_HOME/kdeglobals` 里读取部分配色
+- 各应用配置：`$XDG_CONFIG_HOME/${APP_NAME}rc`
+    - 很多应用也会在这里保存自己的配色方案
+- `$XDG_CONFIG_HOME/kdedefaults/`: 大概是和 Plasma 桌面环境相关的配置项
+    - 没见到一般程序读取这里的文件。
+- Qt 应用还会去读取 `~/.themes` 下的 GTK 主题
+
 
 ## 背景
 
@@ -18,6 +29,9 @@ categories: [GNU/Linux, Appearence]
 正好了解到了 Klassy 这个 breeze 的 fork，
 装上之后却发现部分配色是遵守我的配置，但是更多的配色则是我以前的 Sweet 配色复活了。
 这能忍？
+
+- 新用户下直接使用 Klassy 配置深色 be like (i3, lxqt)：
+<img width="1219" height="452" alt="" src="https://github.com/user-attachments/assets/31e515c2-3247-45fe-95e4-9de56f91fd65" />
 
 于是我把 .local/share/color-scheme 里的 Sweet 配色删掉，又把 .config 里所有和 Sweet 有关的配置项都处理掉。
 可它还是两种配色同时存在。
@@ -46,3 +60,7 @@ ln -s ../.local/share/color-scheme/Matugen.colors kdeglobals
 1. 链接好必要的文件
 1. qt6ct 设置 Klassy 以及配色
 1. 打开 pcmanfm-qt，符合预期
+
+- 示例：
+<img width="1590" height="622" alt="图片" src="https://github.com/user-attachments/assets/eedeff37-d42d-48f3-9c0f-7520ce3d3387" />
+
