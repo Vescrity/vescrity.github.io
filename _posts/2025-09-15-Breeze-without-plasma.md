@@ -4,7 +4,7 @@ title: 无 KDE 配置 Qt 主题 (breeze)
 categories: [GNU/Linux, Appearence]
 ---
 
-这配置文件碎了一地啊……
+亦可解决 Qt 应用暗色不彻底/黑白相间/白底白字 | 这配置文件碎了一地啊……
 
 ## TLDR
 
@@ -53,6 +53,12 @@ ln -s ../.local/share/color-scheme/Matugen.colors kdeglobals
 然后就全都正常了……
 
 最多也就需要我另外在这个配色里再指定几个图标之类的。
+
+- 在新用户里发现 dolphin 还是不吃配色，在 kdeglobals 里指定一下配色的名称就好了。
+```
+[UiSettings]
+ColorScheme=Matugen
+```
 
 ## 验证
 
