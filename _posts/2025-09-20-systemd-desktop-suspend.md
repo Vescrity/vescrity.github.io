@@ -24,7 +24,7 @@ categories: [GNU/Linux, systemd, cgroup]
 systemd-run --user --scope --slice=YukiLauncher.slice --unit="$1-$$".scope /bin/sh -c '"$@"' _ "$@"
 ```
 
-这个`$@`有点坑，不这样写可能会使得传入参数中有空格时命令解析会出问题。
+这个`$@`有点坑，不这样写可能会使得在命令行中传入参数中有空格时命令解析会出问题。
 
 有了这个脚本之后，例如启动 `foot`，执行：
 ```bash
@@ -55,7 +55,7 @@ dmenu_path | dmenu "$@" | ${SHELL:-"/bin/sh"} &
 EXEC=$(dmenu_path | wmenu -i -N 000000 -S 504375 -f 'Comic Mono 10')
 result=$?
 if [ $result -eq 0 ]; then
-    ykrun "$EXEC"
+    ykrun $EXEC             # 这里加引号反而会出问题
 fi
 ```
 
