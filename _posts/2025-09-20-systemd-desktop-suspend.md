@@ -6,6 +6,23 @@ categories: [GNU/Linux, systemd, cgroup]
 
 突发奇想。
 
+## 效果概览
+
+#### 所有在桌面启动的终端、通过 `wmenu` 、终端启动的程序都可以实现挂起、恢复。
+
+例如，在 `wmenu` 中输入 `firefox` 可以启动 `firefox`。
+可以把由这个 `firefox` fork 产生的所有进程全部冻结。
+在终端输入 `susp firefox` 然后按 `Tab` 补全，回车即可。
+恢复则是 `cont firefox` 然后补全。
+
+亦可直接挂起所有这类程序，执行 `yksuspend` 即可。
+将恢复的命令 `ykcont` 绑定至 `niri` 快捷键中，使用快捷键即可恢复。
+
+#### 优雅地退出会话
+
+niri 默认退出时直接结束自身进程，不管应用程序。
+这里支持了在退出时首先等待所有前述的那一类程序完成退出后再结束 wayland 会话。
+
 ## 起因
 
 来自 niri 群聊中提到了 Anyrun，提到了将通过它启动的应用都划至同一 cgroup 下进行管理。
@@ -61,6 +78,7 @@ fi
 
 这里 `wmenu` 除 -i 参数外都是用于调节外观的。
 这样，我们通过 `wmenurun` 启动的应用就直接通过 `ykrun` 在我们自定义的 cgroup 内启动了。
+再在 niri 中给启动终端的命令前加上 `ykrun` 就可以了。
 
 ### 管理
 
@@ -70,7 +88,7 @@ fi
 |命令|内容|说明|
 |-|-|-|
 | `ykls` | `systemctl --user status YukiLauncher.slice` | 使于查看该 cgroup 状态 |
-| `yksusped` | `systemctl --user freeze YukiLauncher.slice` | 禁止该 cgroup 内进程占用 CPU，即冻结|
+| `yksuspend` | `systemctl --user freeze YukiLauncher.slice` | 禁止该 cgroup 内进程占用 CPU，即冻结|
 | `ykcont` | `systemctl --user thaw YukiLauncher.slice` | 解冻 |
 | `ykexit` | `systemctl --user stop YukiLauncher.slice` | SIGTERM 所有进程，同时不允许新进程创建 |
 
