@@ -107,9 +107,21 @@ alias susp="systemctl --user kill --signal=SIGSTOP"
 alias cont="systemctl --user kill --signal=SIGCONT"
 ```
 
-这里使用 kill 单纯是因为用 freeze 的话 zsh 没有提供自动补全，
-好像只是因为 systemd 的包中没有提供关于 freeze/thaw 的命令补全。[信息更新于 2025-09-20]
+~~这里使用 kill 单纯是因为用 freeze 的话 zsh 没有提供自动补全，~~
+~~好像只是因为 systemd 的包中没有提供关于 freeze/thaw 的命令补全。~~[2025-09-20]
 事已至此，交个 [PR](https://github.com/systemd/systemd/pull/39052) 好了。
+
+---
+
+[2025-09-22] 该 PR 已合并至上游。于是可以改为：
+```bash
+alias susp="systemctl --user freeze"
+alias cont="systemctl --user thaw"
+```
+
+另发现 QQ 的 scope 被冻久了的话恢复时会直接闪退，大概是 tx 发力了吧。
+
+---
 
 没有补全来输应用的 scope 就比较难受了。
 而用补全则可以直接先敲出启动时用的命令，再自动补全即可。
