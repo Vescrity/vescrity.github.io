@@ -6,6 +6,8 @@ permalink: /about/
 
 ## About Me
 
+![](https://github-contributor-stats.vercel.app/api?username=vescrity&limit=5&theme=tokyonight&combine_all_yearly_contributions=true)
+
 - 三流水曲人。[Warsic](https://warsic.cn/) 曲部。
 - 粘过OI/ACM的边。
 - 自认为比较认同 [GNU 的观点](https://www.gnu.org/philosophy/philosophy.html)。
