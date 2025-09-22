@@ -32,6 +32,17 @@ body {
   width: 100%;
 }
 
+table {
+  border: 1px solid white;
+  border-collapse: collapse;
+  margin: 15px;
+}
+
+th, td {
+  border: 1px solid white;
+  padding: 8px;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $helveticaNeue;
   color: $front;
