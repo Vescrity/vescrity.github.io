@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 友链
-permalink: /friends/
+title: Links
+permalink: /links/
 ---
 
 - [律回彼境](https://glowmem.com/)
