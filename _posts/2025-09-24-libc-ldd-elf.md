@@ -12,6 +12,58 @@ categories: [GNU/Linux, ELF, LibC]
 大概知道了 LibC 在操作系统中的地位，
 同时也了解了一下用户空间程序大概需要实现些什么。
 
+## 内容随记
+
+### 用户程序入口点
+
+- 用户程序的入口点不是 main 函数而是 _start()
+- libC 包装了系统调用以及众多基础函数的实现
+- 可以用 C 语言写一个完全不依赖 libC 的用户空间程序
+    - 此时可能需要内联汇编来执行系统调用
+
+### 静态链接？ldd？
+
+- ldd 的处理对象是“动态可执行文件”，一个”静态”的程序并不是这种程序。
+
+`readelf -h` 某一行输出：
+```
+类型:                              DYN (Position-Independent Executable file)
+类型:                              EXEC (可执行文件)
+```
+这里应该是指该可执行文件是否“位置无关”(PIE)
+
+`file` 部分输出：
+```
+dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2
+statically linked
+```
+
+对于一个非PIE可执行文件，需要指定的 interpreter 来加载。而这个 interpreter 是可以更改的。
+用 `ldd` 查看这种文件，会得到
+```
+	不是动态可执行文件
+```
+这样的报错。同时可以看到程序返回了 1.
+
+还有一种情况，`ldd` 会输出 
+```
+    statically linked
+```
+
+此时该程序肯定为PIE程序，没有链接到任何动态库。
+对这个文件使用 `file` 查看，仍会得到
+```
+dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2
+```
+的结果。
+
+一般直接用 `gcc` 的 `-static` 选项编译出来的文件直接就是非PIE的。
+而一个用默认选项编译的、没有使用 libc 的程序(实际可能需要加某些选项才能编译通过)，
+仍然是 PIE 的，但是用 `ldd` 查看便会得到前述的 `statically linked` 的结果。
+
+---
+
+
 先放一下 AI 总结算了，之后再自己总结一下。
 
 总之首先第一点就是让 AI 给你写自己完全不熟悉的领域的代码可靠性是极差的。
