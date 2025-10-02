@@ -133,4 +133,38 @@ pacman -S lostfiles
 弄差不多了应该就 OK 了。
 
 
+### 清理用户配置
+
+这一部分不太好处理。
+
+#### 用户组
+
+Manjaro 为用户默认启用了 **一大堆** 在 Arch Wiki 中 **不推荐** 加入的用户组。
+
+[参考这里及邻近章节](https://wiki.archlinuxcn.org/wiki/%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84#systemd_%E4%B9%8B%E5%89%8D%E7%9A%84%E7%BE%A4%E7%BB%84)
+
+belike:
+```
+3(sys),90(network),98(power),987(storage),991(lp),994(input),995(disk),996(audio),998(wheel)
+```
+
+至少不加入这其中某些组并不影响正常的 Arch 用户使用。
+依照 Wiki 中说明，以及对比我本地的用户组情况按需删除。
+
+本地：
+```
+958(realtime),984(users),998(wheel)
+```
+其中 
+- `realtime` 组为了 DAW 相关软件的性能而启用，
+- `users` 组为 `bsd-games` 的某些游戏记录读写需求，
+- `wheel` 组为使用 `sudo` 所需要。
+
+显然只有 `wheel` 组还算是相对必需的。
+
+使用 `gpasswd -d username groupname` 来将用户移除指定组。
+
+#### 用户配置文件
+
+这个就只能按需处理了~
 
