@@ -42,3 +42,14 @@ pacman -S virt-manager qemu-desktop
 
 客户机里显示特效很有问题，应该需要调节显示选项，但是还没有弄明白（）
 
+## 从物理磁盘启动
+
+[Wiki](https://wiki.archlinuxcn.org/wiki/Libvirt#%E9%80%9A%E8%BF%87_virt-manager_%E6%B7%BB%E5%8A%A0%E7%A3%81%E7%9B%98)
+```
+新建虚拟机：选择 "导入现有磁盘"，粘贴磁盘唯一路径
+```
+
+用户不在 disk 组时可能会碰到 permission denied，如果不想把用户加入 disk 组就把对应的磁盘给 chown 一下就好了。（不过每次重启都需要重新操作就是了）
+
+启动 Windows 时发现第一次启动会蓝屏，第二回便能正常启动。
+
