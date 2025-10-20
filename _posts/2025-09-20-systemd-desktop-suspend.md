@@ -119,7 +119,7 @@ alias susp="systemctl --user freeze"
 alias cont="systemctl --user thaw"
 ```
 
-另发现 QQ 的 scope 被冻久了的话恢复时会直接闪退，大概是 tx 发力了吧。
+不过冻往的界面最好不要动它，不然恢复时会一下传入过多的事件导致崩溃。
 
 ---
 
