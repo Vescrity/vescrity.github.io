@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 用 systemd-nspawn 启动一个当前系统的副本容器
-categories: [GNU/Linux, systemd, systemd-nspawn]
+categories: [GNU/Linux, Systemd, Systemd-nspawn]
 ---
 
 Linux 有点太灵活了。
