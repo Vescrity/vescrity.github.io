@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 用 systemd-nspawn 启动一个当前系统的副本容器
+title: 用 systemd-nspawn 启动一个系统副本容器
 categories: [GNU/Linux, Systemd, Systemd-nspawn]
 ---
 
@@ -101,3 +101,8 @@ systemd-nspawn -bD / --volatile=yes --overlay=/etc/:tmppath/u1:/etc
 而关于为什么要指定 overlay，则是因为不指定时只有 `/usr` 被自动 overlay，启动时会执行 `systemd-firstboot`，最后得到的是一个 `/etc` 干净到连 `pacman` 都用不了的系统。而 `/var` 也需要 overlay 进来，因为 `pacman` 数据库在这里。
 
 要是用 `--bind` 等参数，那写入就会被写入到宿主系统了，这显然不是我们想要的了。
+
+## 另见
+
+[利用 Aufs 和 LXC 快速建立一个用于测试的系统副本](https://blog.lilydjwg.me/2014/2/19/duplicate-your-system-with-aufs-and-lxc.42928.html)
+[lxc-arch2](https://gist.github.com/lilydjwg/7f949263a98892153cc5)
